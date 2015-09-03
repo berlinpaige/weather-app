@@ -26,7 +26,8 @@ var zipCode = '';
 function currentLocationClicked(e){
   var currentLocation = $.ajax('http://api.wunderground.com/api/751291fe8abdb495/geolookup/q/autoip.json',{
     dataType: 'jsonp',
-    method: 'GET'
+    method: 'GET',
+    timeout: 3000
   }).success(function(data){
     console.log('Geodata', data);
     currentCity = data.location.city + ', ';
@@ -34,6 +35,7 @@ function currentLocationClicked(e){
     currentCountry = data.location.country;
     goClicked();  
   }).fail(function(error){
+    console.log('fail', data);
      $('#weatherCheck').text('oops! we can find you! try typing your location instead');
   });
 }
@@ -48,6 +50,7 @@ function goClicked(e){
     dataType: 'jsonp',
     method: 'GET'
   }).success(function(data){
+    console.log('data', data);
     $('#city').text(data.current_observation.display_location.city + ', ');
     $('#state').text(data.current_observation.display_location.state);
     $('#temp').text(data.current_observation.temperature_string);
@@ -56,7 +59,7 @@ function goClicked(e){
     $('#weather').text(data.current_observation.weather);
     weeklyForcast(e);
     function weeklyForcast(e){
-      var promise2 = $.ajax('http://api.wunderground.com/api/751291fe8abdb495/forecast10day/q/CA/San_Francisco.json', {
+      var promise2 = $.ajax('http://api.wunderground.com/api/751291fe8abdb495/forecast10day/q/'+ encodeURI(currentStateorCountry)+'/'+ encodeURI(currentCity || zipcode) +'.json', {
         dataType: 'jsonp',
         method: 'GET'
         }).success(function(data){
