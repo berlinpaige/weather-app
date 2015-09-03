@@ -1,33 +1,132 @@
 <!DOCTYPE html>
 <html>
  <head>  
-   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+    <link rel='stylesheet' href='weatherApp.css'>
+
  </head>
  <body>
    <div id='time'>
    </div>
-   <h1>do you need an umbrella?</h1>
-   <h2>let's check the weather<h2>
-   <label for='desiredCity'>city:</label>
-   <input type='text' id='desiredCity'>
-   <label for='desiredState'>state:</label>
-   <input type='text' id='desiredState'>
-   <button id ='goButton'>get sunshine</button>
-   <div>
-   <span id='city'></span> <span id='state'></span>
+   <div class = 'center-align'>
+      <h1 class='indigo-text'>do you need an umbrella?</h1>
+      <h2 class='blue-text'>let's check the weather<h2>
+     
+      <div class="row">
+       <form>
+           <div class="input-field col s6 m3 offset-m2">
+             <input placeholder="city" id="desiredCity" type="text">
+           </div>
+           <div class="input-field col s2 m2 ">
+            <input placeholder="state (2 digit code)" id="desiredState" type="text">
+           </div>
+           <div class="input-field col s3 m2 offset-m1 offset-s1">
+            <input placeholder="or zipcode" id="desiredZip" type="text">
+           </div>
+       </form>
+      </div>
+   
+      <button id ='goButton' class= 'z-depth-5 cyan darken-3 white-text'>get sunshine</button>
+      
+      <div>
+      <span id='city'class='indigo-text'></span> <span id='state'class='indigo-text'></span>
+      </div>
+        <div id='weatherInfo'>
+            <div id='temp' class='blue-text'></div>
+            <div id='weather'class='indigo-text'></div>
+            <div id='humidity' class='blue-text'></div>
+            <div id="weekForcast"class='indigo-text'></div>
+        </div>    
+      <h1 id='forecast' class='indigo-text'>10 day forecast</h1>
    </div>
-   <div id='temp'>
-   </div>
-   <div id='weather'>
-   </div>
-   <div id='humidity'>
-   </div>
-
+      <div class="row">
+        <div class="col s12 m4 offset-m1 z-depth-5 ">
+          <div class="card indigo darken-1">
+            <div class="card-title white-text center-align ">
+              <span id='dayOfWeek0' class="card-content"></span>
+              <p id='weatherOfDay0'class='vcell valign-wrapper'></p>
+            </div>
+          </div>
+        </div>
+         <div class="col s12 m4 z-depth-5 offset-m2">
+          <div class="card indigo darken-2">
+            <div class="card-title white-text center-align">
+              <span id='dayOfWeek1'class="card-content"></span>
+              <p id='weatherOfDay1' class='vcell valign-wrapper'></p>
+            </div>
+          </div>
+        </div>
+           <div class="col s12 m4 offset-m1 z-depth-5 ">
+          <div class="card indigo darken-3">
+            <div class="card-title white-text center-align">
+              <span id='dayOfWeek2' class="card-content"></span>
+              <p id='weatherOfDay2'class='vcell valign-wrapper'></p>
+            </div>
+          </div>
+        </div>
+         <div class="col s12 m4 z-depth-5 offset-m2">
+          <div class="card indigo darken-4">
+            <div class="card-title white-text center-align">
+              <span id='dayOfWeek3'class="card-content"></span>
+              <p id='weatherOfDay3'class='vcell valign-wrapper'></p>
+            </div>
+          </div>
+        </div>
+           <div class="col s12 m4 offset-m1 z-depth-5 ">
+          <div class="card blue darken-4">
+            <div class="card-title white-text center-align">
+              <span id='dayOfWeek4' class="card-content"></span>
+              <p id='weatherOfDay4'class='vcell valign-wrapper'></p>
+            </div>
+          </div>
+        </div>
+         <div class="col s12 m4 z-depth-5 offset-m2">
+          <div class="card blue darken-3">
+            <div class="card-title white-text center-align">
+              <span id='dayOfWeek5'class="card-content"></span>
+              <p id='weatherOfDay5'class='vcell valign-wrapper'></p>
+            </div>
+          </div>
+        </div>
+           <div class="col s12 m4 offset-m1 z-depth-5 ">
+          <div class="card blue darken-2">
+            <div class="card-title white-text center-align">
+              <span id='dayOfWeek6' class="card-content"></span>
+              <p id='weatherOfDay6'class='vcell valign-wrapper'></p>
+            </div>
+          </div>
+        </div>
+         <div class="col s12 m4 z-depth-5 offset-m2">
+          <div class="card blue darken-1">
+            <div class="card-title white-text center-align">
+              <span id='dayOfWeek7'class="card-content"></span>
+              <p id='weatherOfDay7'class='vcell valign-wrapper'></p>
+            </div>
+          </div>
+        </div>
+           <div class="col s12 m4 offset-m1 z-depth-5 ">
+          <div class="card indigo darken-1">
+            <div class="card-title white-text center-align">
+              <span id='dayOfWeek8' class="card-content"></span>
+              <p id='weatherOfDay8'class='vcell valign-wrapper'></p>
+            </div>
+          </div>
+        </div>
+         <div class="col s12 m4 z-depth-5 offset-m2">
+          <div class="card indigo darken-2">
+            <div class="card-title white-text center-align">
+              <span id='dayOfWeek9'class="card-content"></span>
+              <p id='weatherOfDay9'class='vcell valign-wrapper'></p>
+            </div>
+          </div>
+        </div>
+      </div>
     
  
     
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
-   <script src='ajaxPractice.js'></script>   
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    </script>
+   <script src='weatherApp.js'></script>   
  </body>  
 </html>

@@ -1,0 +1,26 @@
+#goButton{
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.card{
+  border-radius: 10px;
+  margin-top: 40px;
+}
+.forecast{
+  margin-top: 40px;
+}
+
+.weatherInfo{
+  margin-top: 40px;
+  padding:15px;
+}
+
+.vcell{
+  height:300px;
+}
+#dayOfWeek0{
+  font-size: 24px;
+}
