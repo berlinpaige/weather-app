@@ -60,7 +60,6 @@ function goClicked(e){
       $('#humidity').text(data.current_observation.relative_humidity + ' humidity');
       $('#weather').text(data.current_observation.weather);
       weeklyForcast(e);
-      
       function weeklyForcast(e){
         var promise2 = $.ajax('http://api.wunderground.com/api/751291fe8abdb495/forecast10day/q/'+ encodeURI(currentStateorCountry)+'/'+ encodeURI(currentCity || zipcode) +'.json', {
           dataType: 'jsonp',
