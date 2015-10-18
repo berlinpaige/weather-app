@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
- <head>  
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
     <link rel='stylesheet' href='weatherApp.css'>
     <title>Do you need an Umbrella? Weather App</title>
+    <link rel="shortcut icon" href="umbrella.png">
  </head>
  <body>
    <div id='time'>
@@ -13,17 +17,17 @@
       <h2 id='weatherCheck'class='blue-text'>let's check the weather<h2>
       <div class= "row">
        <form>
-          <div class="input-field col s6 m3 offset-m1">
-             <input placeholder="city" id="desiredCity" type="text">
+          <div class="input-field col s6 ">
+             <input id='cityInput' placeholder="city" id="desiredCity" type="text">
           </div>
-          <div class="input-field col s6 m2 ">
-            <input placeholder="state or country" id="desiredState" type="text">
+          <div class="input-field col s6 ">
+            <input id='stateOrCountry' placeholder="state or country" id="desiredState" type="text">
           </div>
-          <div class="input-field col s6 m2 offset-m1">
-            <input placeholder="or zipcode" id="desiredZip" type="text">
+          <div class="input-field col s6 ">
+            <input id='zip' placeholder="or zipcode" id="desiredZip" type="text">
           </div>
        </form>
-       <h6 id='currentLocation' class= 'col m2 s6 grey-text'>or <button>get</button> current location</h6>
+       <h6 id='currentLocation' class= 'col s6 grey-text'>or <button id='getButton'>get</button> current location</h6>
    </div>
    <button id ='goButton' class= 'z-depth-5 cyan darken-3 white-text'>get sunshine</button>   
       <div>
