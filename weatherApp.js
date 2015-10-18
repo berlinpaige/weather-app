@@ -33,6 +33,7 @@ function currentLocationClicked(e){
     currentStateorCountry = data.location.state;
     currentCountry = data.location.country;
     goClicked();  
+    console.log('success data', data);
   }).fail(function(error){
     console.log('fail', data);
      $('#weatherCheck').text('oops! we can find you! try typing your location instead');

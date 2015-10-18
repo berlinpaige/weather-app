@@ -23,7 +23,7 @@
   margin-top: 4%
 }
 
-#cityInput, #zip, #stateOrCountry, #currentLocation{
+#desiredCity, #desiredZip, #desiredState, #currentLocation{
   font-size: 20px;
 }
 #getButton{
